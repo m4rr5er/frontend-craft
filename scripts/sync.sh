@@ -12,18 +12,18 @@ pull_reactbits() {
     https://github.com/DavidHDev/react-bits "$TMP/rb" --quiet
   (cd "$TMP/rb" && git sparse-checkout set src/content src/components src/hooks src/lib 2>/dev/null \
     || git sparse-checkout set src --quiet)
-  rm -rf registry/reactbits
-  mkdir -p registry/reactbits
+  rm -rf skills/frontend-craft/registry/reactbits
+  mkdir -p skills/frontend-craft/registry/reactbits
   # copy component sources (exclude the marketing-site shell)
   for d in content components hooks lib; do
-    [ -d "$TMP/rb/src/$d" ] && cp -r "$TMP/rb/src/$d" "registry/reactbits/$d"
+    [ -d "$TMP/rb/src/$d" ] && cp -r "$TMP/rb/src/$d" "skills/frontend-craft/registry/reactbits/$d"
   done
   # fallback: if the layout differs, vendor the whole src tree
-  if [ ! -d registry/reactbits/content ] && [ ! -d registry/reactbits/components ]; then
-    cp -r "$TMP/rb/src" registry/reactbits/src
+  if [ ! -d skills/frontend-craft/registry/reactbits/content ] && [ ! -d skills/frontend-craft/registry/reactbits/components ]; then
+    cp -r "$TMP/rb/src" skills/frontend-craft/registry/reactbits/src
   fi
-  cp "$TMP/rb/LICENSE.md" registry/reactbits/LICENSE.md 2>/dev/null \
-    || cp "$TMP/rb/LICENSE" registry/reactbits/LICENSE 2>/dev/null \
+  cp "$TMP/rb/LICENSE.md" skills/frontend-craft/registry/reactbits/LICENSE.md 2>/dev/null \
+    || cp "$TMP/rb/LICENSE" skills/frontend-craft/registry/reactbits/LICENSE 2>/dev/null \
     || echo "WARN: upstream license file not found — check manually"
   rm -rf "$TMP"
   echo "==> reactbits: done"

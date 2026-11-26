@@ -14,17 +14,17 @@ try {
   if ($LASTEXITCODE -ne 0) { git sparse-checkout set src --quiet }
   Pop-Location
 
-  if (Test-Path registry/reactbits) { Remove-Item -Recurse -Force registry/reactbits }
-  New-Item -ItemType Directory -Path registry/reactbits | Out-Null
+  if (Test-Path skills/frontend-craft/registry/reactbits) { Remove-Item -Recurse -Force skills/frontend-craft/registry/reactbits }
+  New-Item -ItemType Directory -Path skills/frontend-craft/registry/reactbits | Out-Null
   foreach ($d in 'content', 'components', 'hooks', 'lib') {
     $src = Join-Path $tmp "rb/src/$d"
-    if (Test-Path $src) { Copy-Item -Recurse $src registry/reactbits/ }
+    if (Test-Path $src) { Copy-Item -Recurse $src skills/frontend-craft/registry/reactbits/ }
   }
-  if (-not (Test-Path registry/reactbits/content) -and -not (Test-Path registry/reactbits/components)) {
-    Copy-Item -Recurse (Join-Path $tmp 'rb/src') registry/reactbits/src
+  if (-not (Test-Path skills/frontend-craft/registry/reactbits/content) -and -not (Test-Path skills/frontend-craft/registry/reactbits/components)) {
+    Copy-Item -Recurse (Join-Path $tmp 'rb/src') skills/frontend-craft/registry/reactbits/src
   }
   $lic = Join-Path $tmp 'rb/LICENSE.md'
-  if (Test-Path $lic) { Copy-Item $lic registry/reactbits/LICENSE.md } else {
+  if (Test-Path $lic) { Copy-Item $lic skills/frontend-craft/registry/reactbits/LICENSE.md } else {
     Write-Output 'WARN: upstream license file not found — check manually'
   }
   Write-Output '==> reactbits: done'

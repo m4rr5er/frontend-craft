@@ -11,12 +11,12 @@ AI 生成的界面和专业界面的差距不在技术——在于**审美纪律
 ```
 frontend-craft/
 ├── skills/
-│   └── frontend-craft/        # 核心技能——装进你的智能体技能目录
+│   └── frontend-craft/        # 自包含技能——整个文件夹复制进你的智能体技能目录即可
 │       ├── SKILL.md           # 中文版本
-│       └── SKILL.en.md        # English version
-├── registry/                  # 已下载、可直接改造的优质组件源码
-│   ├── reactbits/             # React 动画组件（来源：github.com/DavidHDev/react-bits）
-│   └── SOURCES.md             # 15 个精选源的目录：用途、许可、拉取方式
+│       ├── SKILL.en.md        # English version
+│       └── registry/          # 已 vendor 的优质组件弹药
+│           ├── reactbits/     # React 动画组件（MIT+署名，许可文件已保留）
+│           └── SOURCES.md     # 15 个精选源的目录：用途、许可、拉取方式
 └── scripts/
     ├── sync.sh                # 重新拉取/更新弹药库（Linux/macOS/WSL）
     └── sync.ps1               # Windows
@@ -32,7 +32,7 @@ reactbits.dev、uiverse.io 这类组件站的价值在**源码本身**而不是�
 
 ## 安装技能
 
-**pi / APIX**——复制或软链进 `~/.pi/agent/skills/`：
+**pi / APIX**——把技能文件夹复制进 `~/.pi/agent/skills/`：
 
 ```bash
 cp -r skills/frontend-craft ~/.pi/agent/skills/
@@ -41,6 +41,8 @@ cp -r skills/frontend-craft ~/.pi/agent/skills/
 **Devin / Codex**——复制进 `~/.codex/skills/`（或你的智能体宿主的技能目录）。
 
 **其他智能体**：技能是带 YAML frontmatter 的纯 Markdown，直接指过去即可。
+
+技能完全自包含：vendor 的组件弹药库就在技能文件夹内，上面这一条复制命令就是全部。
 
 ## 使用纪律（速览）
 
@@ -57,7 +59,7 @@ cp -r skills/frontend-craft ~/.pi/agent/skills/
 scripts/sync.sh        # 重新拉取各弹药库的最新上游
 ```
 
-上游快照是有意刷新并提交的——消费者拿到的永远是连贯、审过的状态。
+上游快照是有意刷新并提交的——消费者拿到的永远是连贯、审过的状态。跨机使用：每台机器 clone 本仓库，每次 pull 后重跑一次安装复制。
 
 ## 许可
 

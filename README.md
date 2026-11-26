@@ -11,12 +11,12 @@ The gap between AI-generated UI and professional UI is not technology — it is 
 ```
 frontend-craft/
 ├── skills/
-│   └── frontend-craft/        # The core skill — install into your agent's skills directory
+│   └── frontend-craft/        # Self-contained skill — copy this whole folder into your agent's skills directory
 │       ├── SKILL.md           # 中文版本
-│       └── SKILL.en.md        # English version
-├── registry/                  # Downloaded, ready-to-adapt premium component sources
-│   ├── reactbits/             # Animated React components (source: github.com/DavidHDev/react-bits, MIT-with-attribution)
-│   └── SOURCES.md             # Catalog of 15 curated sources: purpose, licensing, how to pull
+│       ├── SKILL.en.md        # English version
+│       └── registry/          # Vendored premium component sources
+│           ├── reactbits/     # Animated React components (MIT+attribution, license preserved)
+│           └── SOURCES.md     # Catalog of 15 curated sources: purpose, licensing, how to pull
 └── scripts/
     ├── sync.sh                # Re-pull / update registries (Linux/macOS/WSL)
     └── sync.ps1               # Windows
@@ -32,7 +32,7 @@ Component sites like reactbits.dev or uiverse.io are copy-paste catalogs — the
 
 ## Install the skill
 
-**pi / APIX** — copy or symlink into `~/.pi/agent/skills/`:
+**pi / APIX** — copy the skill folder into `~/.pi/agent/skills/`:
 
 ```bash
 cp -r skills/frontend-craft ~/.pi/agent/skills/
@@ -41,6 +41,8 @@ cp -r skills/frontend-craft ~/.pi/agent/skills/
 **Devin / Codex** — copy into `~/.codex/skills/` (or your agent host's skills directory).
 
 **Any other agent**: the skill is plain Markdown with YAML frontmatter — point your agent at it.
+
+The skill is fully self-contained: the vendored component registry travels inside the skill folder, so the copy above is all you need.
 
 ## Usage discipline (the short version)
 
@@ -57,7 +59,7 @@ The full discipline (10 testable anti-AI-flavor rules) is in the skill file.
 scripts/sync.sh        # re-pulls vendored registries at their latest upstream
 ```
 
-Upstream snapshots are refreshed intentionally and committed — consumers always get a coherent, reviewed state.
+Upstream snapshots are refreshed intentionally and committed — consumers always get a coherent, reviewed state. Cross-machine usage: clone this repo on each machine and re-run the install copy after each pull.
 
 ## Licensing
 
