@@ -4,7 +4,7 @@
 
 简体中文 | [English](./README.md)
 
-AI 生成的界面和专业界面的差距不在技术——在于**审美纪律和弹药质量**。本仓库把两者打包成版本化、机器可读的资产，任何智能体（Devin、pi/APIX 工蚁、Claude Code、Codex……）都能同步和应用。
+AI 生成的界面和专业界面的差距不在技术——在于**审美纪律和弹药质量**。本仓库把两者打包成版本化、机器可读的资产，任何智能体（Devin、Claude Code、Codex、pi……）都能同步和应用。
 
 ## 内容结构
 
@@ -32,7 +32,7 @@ reactbits.dev、uiverse.io 这类组件站的价值在**源码本身**而不是�
 
 ## 安装技能
 
-**pi / APIX**——把技能文件夹复制进 `~/.pi/agent/skills/`：
+**pi**——把技能文件夹复制进 `~/.pi/agent/skills/`：
 
 ```bash
 cp -r skills/frontend-craft ~/.pi/agent/skills/

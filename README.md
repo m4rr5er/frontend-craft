@@ -4,7 +4,7 @@
 
 [简体中文](./README.zh-CN.md) | English
 
-The gap between AI-generated UI and professional UI is not technology — it is **aesthetic discipline and quality ammunition**. This repository packages both into a version-controlled, machine-readable asset that any agent (Devin, pi/APIX ants, Claude Code, Codex, …) can sync and apply.
+The gap between AI-generated UI and professional UI is not technology — it is **aesthetic discipline and quality ammunition**. This repository packages both into a version-controlled, machine-readable asset that any agent (Devin, Claude Code, Codex, pi, …) can sync and apply.
 
 ## What's inside
 
@@ -32,7 +32,7 @@ Component sites like reactbits.dev or uiverse.io are copy-paste catalogs — the
 
 ## Install the skill
 
-**pi / APIX** — copy the skill folder into `~/.pi/agent/skills/`:
+**pi** — copy the skill folder into `~/.pi/agent/skills/`:
 
 ```bash
 cp -r skills/frontend-craft ~/.pi/agent/skills/

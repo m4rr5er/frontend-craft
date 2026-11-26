@@ -49,7 +49,7 @@ AI-generated UIs have an instantly recognizable smell. Root causes — these bad
 
 1. **References before hands**: pick 1–2 close references from inspiration sites; save screenshots/links into work notes. Designing from imagination ends in mediocrity
 2. **Copy structure, not skin**: take DOM structure + motion logic; colors/fonts/radii must be replaced with the project's own design tokens — verbatim copying is pasting someone else's brand into your product
-3. **Three-tier network self-rescue** (if your network is restricted): try local proxy at port 7897 first; if dead, read the self-rescue manual and start your own proxy on 127.0.0.1:17897
+3. **Network self-rescue** (if your network is restricted): use your configured proxy; for GitHub resources try mirror sources (jsdelivr/ghproxy); off-peak retries often help
 4. **Acceptance after copying**: passing the build is only the floor — walk the ten discipline rules yourself; violations mean rework
 5. **Consistency beats single-point brilliance**: one mediocre-but-consistent interface beats nine stunning components stitched into a patchwork quilt
 
